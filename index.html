@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weiyu / オフィシャルサイト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: snow;
+        }
+
+        a {
+            color: lightpink;
+            font-style: italic;
+            text-decoration: none;
+        }
+
+        h3 {
+            color: dimgray;
+            text-decoration: underline;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
+            grid-gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container div {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: white;
+        }
+
+        /* 原始保留區塊樣式 */
+        .header-container {
+            display: flex; /* 啟用 Flexbox */
+            justify-content: space-between; /* 讓子元素兩端對齊，中間分配空間 */
+            align-items: center; /* 垂直置中對齊 */
+            background-color: #333;
+            color: white;
+            padding: 20px 10px;
+        }
+
+        .site-title {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .nl {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* 按鈕之間的間距 */
+            font-family: sans-serif;
+            /* 移除 justify-content: center; 因為父容器會處理對齊 */
+        }
+
+        .nl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-family: sans-serif;
+        }
+
+        .nl a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: #555;
+            transition: background-color 0.3s;
+            font-style: normal;
+        }
+
+        .nl a:hover {
+            background-color: #888;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .bc {
+            grid-column: 1 / span 2;
+            grid-row: 1 / span 2;
+        }
+
+        .sc {
+            grid-column: 3 / 4;
+            grid-row: 1 / 2;
+        }
+
+        .sc a {
+            display: inline-block;
+            padding: 8px 18px;
+            font-size: 16px;
+            color: white;
+            background-color: #ffb6c1;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .sc a:hover {
+            background-color: #ffc0cb;
+        }
+
+        .sc2 {
+            grid-column: 3 / 4;
+            grid-row: 2 / 3;
+        }
+
+        .footer {
+            grid-column: 1 / 4;
+            text-align: center;
+            background-color: #eee;
+        }
+
+        .bc img.banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px;
+        }
+
+        .profile-text {
+            margin-top: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .btn-group2 a {
+            display: inline-block;
+            padding: 7px 17px;
+            font-size: 16px;
+            color: white;
+            background-color: #b0c4de;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-group2 a:hover {
+            background-color: #87ceeb;
+        }
+
+        .important {
+            color: lightskyblue;
+            text-decoration: underline;
+            font-size: 18px;
+        }
+
+        #end {
+            color: gray;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        #wa {
+            text-align: center;
+            color: #a9a9a9;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .bc img.banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* optional 圓角 */
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- 保留原本顯示方式的 Header + Banner -->
+    <div class="header-container">
+        <div class="site-title">Weiyu｜<span style="font-size: 24px;">Official Site</span></div>
+        <div class="nl">
+            <a href="About.html">Profile</a>
+            <a href="sc.html">Schedule</a>
+            <a href="Lyrics.html">Music</a>
+            <a href="mailto:macadam_topspin.0d@icloud.com">Contact</a>
+            <a href="phone.html">Phone</a>
+        </div>
+    </div>
+    <img src="Weiyu.jpg" class="banner" alt="Weiyu Banner">
+
+    <!-- 其餘內容採用新版排版風格 -->
+    <div class="container">
+        <div class="bc">
+            <img src="Lan.webp" alt="Banner" class="banner">
+            <h3>About Me</h3>
+            <ul>
+                <li>From Taipei</li>
+                <li>Gemini</li>
+                <li>ISTP</li>
+                <li>NICA</li>
+                <li>TKU DILS</li>
+            </ul>
+            <h3 class="important">School timetable</h3>
+            <div class="btn-group2" style="border: none; padding: 0; background-color: transparent;">
+                <p><a class="important" href="sc.html" target="_blank">
+            このボタンをぽちってね～！そしたら、あのページに行けるよんっ</a></p>
+            </div>
+        </div>
+
+        <div class="sc">
+            <h3>This month's favorite animation top5</h3>
+            <ol>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42917" target="_blank">日々は過ぎれど飯うまし</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42905" target="_blank">スライム倒して300年、知らないうちにレベルMAXになってました</a></li>
+                <br>
+                <li><a href="https://www.netflix.com/browse?jbv=81712068" target="_blank">薬屋のひとりごと</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42887" target="_blank">完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42931" target="_blank">忍者と殺し屋のふたりぐらし</a></li>
+            </ol>
+        </div>
+
+        <div class="sc2">
+            <!--<h3>Tags</h3>
+            <table>
+                <tr><td>Tag1</td><td>style</td></tr>
+                <tr><td>Tag2</td><td>hr</td></tr>
+                <tr><td>Tag3</td><td>br</td></tr>
+            </table>-->
+            <h3>My favorite light novels and manga</h3>
+            <table>
+                <tr><td><a href="https://roshidere.com" target="_blank">時々ボソッとロシア語でデレる隣のアーリャさん</a></td></tr>
+                <tr><td><a href="https://shonenjumpplus.com/episode/13933686331692600972" target="_blank">久保さんは僕を許さない</a></td></tr>
+                <!--<tr><td><a href="https://fantasiabunko.jp/special/202302shuichi/" target="_blank">週に一度クラスメイトを買う話</a></td></tr>
+                <tr><td><a href="https://storia.takeshobo.co.jp/manga/osakano/" target="_blank">どうしたら幼馴染の彼女になれますか！？</a></td></tr>-->
+            </table>
+            
+
+            <h3 class="important">Lyrics</h3>
+            <div class="btn-group2" style="border: none; padding: 0; background-color: transparent;">
+                <p><a class="important" href="Lyrics.html" target="_self">天球(そら)のMúsica</a></p>
+                <p><a class="important" href="Lyrics2.html" target="_self">金系雀～カナリヤ～feat.亜季</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p id="end">This page is still under construction.</p>
+            <h5 id="wa">当サイトの内容の無断転載・引用を禁じます。</h5>
+            <p id="end">3.15: Add Page; 3.20 Fixed the link; 3.23:CSS Adjustments; 3.24:Add Page; 4.01:Add Page and Some adjustments; 5.06:Edited with Flex; 5.19:Optimizing flex; 5.25:Update something<br>Contact: macadam_topspin.0d@icloud.com</p>
+        </div>
+    </div>
+</body>
+</html>

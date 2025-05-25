@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Weiyu / オフィシャルサイト</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+            background-color: snow;
+        }
+
+        a {
+            color: lightpink;
+            font-style: italic;
+            text-decoration: none;
+        }
+
+        h3 {
+            color: dimgray;
+            text-decoration: underline;
+            font-size: 24px;
+        }
+
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr; /* 桌面版：3 欄 */
+            grid-template-rows: auto auto auto auto auto; /* 預留足夠的行數 */
+            grid-gap: 10px;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+
+        .container div {
+            border: 1px solid #ccc;
+            padding: 15px;
+            background-color: white;
+        }
+
+        /* 原始保留區塊樣式 */
+        .header-container {
+            display: flex; /* 啟用 Flexbox */
+            justify-content: space-between; /* 讓子元素兩端對齊，中間分配空間 */
+            align-items: center; /* 垂直置中對齊 */
+            background-color: #333;
+            color: white;
+            padding: 20px 10px;
+        }
+
+        .site-title {
+            font-size: 32px;
+            font-weight: bold;
+            font-family: "Times New Roman", Times, serif;
+        }
+
+        .nl {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px; /* 按鈕之間的間距 */
+            font-family: sans-serif;
+        }
+
+        .nl a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 8px 16px;
+            border-radius: 8px;
+            background-color: #555;
+            transition: background-color 0.3s;
+            font-style: normal;
+        }
+
+        .nl a:hover {
+            background-color: #888;
+        }
+
+        .banner {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .bc {
+            grid-column: 1 / span 2; /* 橫跨第 1 到第 2 欄 */
+            grid-row: 1 / span 2; /* 橫跨第 1 到第 2 行 */
+        }
+
+        .sc {
+            grid-column: 3 / 4; /* 第 3 欄 */
+            grid-row: 1 / 2; /* 第 1 行 */
+        }
+
+        .sc a {
+            display: inline-block;
+            padding: 8px 18px;
+            font-size: 16px;
+            color: white;
+            background-color: #ffb6c1;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .sc a:hover {
+            background-color: #ffc0cb;
+        }
+
+        .sc2 {
+            grid-column: 3 / 4; /* 第 3 欄 */
+            grid-row: 2 / 3; /* 第 2 行 */
+        }
+
+        /* 新增的區塊樣式 */
+        .school-timetable {
+            grid-column: 3 / 4; /* 第 3 欄 */
+            grid-row: 3 / 4; /* 第 3 行 */
+        }
+
+        .lyrics-section {
+            grid-column: 3 / 4; /* 第 3 欄 */
+            grid-row: 4 / 5; /* 第 4 行 */
+        }
+
+        .footer {
+            grid-column: 1 / 4; /* 橫跨所有欄 */
+            text-align: center;
+            background-color: #eee;
+        }
+
+        .bc img.banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* optional 圓角 */
+        }
+
+        .profile-text {
+            margin-top: 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+        }
+
+        .btn-group2 a {
+            display: inline-block;
+            padding: 7px 17px;
+            font-size: 16px;
+            color: white;
+            background-color: #b0c4de;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            border: none; /* 確保按鈕本身沒有額外的邊框 */
+        }
+
+        .btn-group2 a:hover {
+            background-color: #87ceeb;
+        }
+
+        .important {
+            color: lightskyblue;
+            text-decoration: underline;
+            font-size: 18px;
+        }
+
+        #end {
+            color: gray;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        #wa {
+            text-align: center;
+            color: #a9a9a9;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        .bc img.banner {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 10px; /* optional 圓角 */
+        }
+
+        /* ******************************************* */
+        /* 手機優化 (Mobile Optimization) Media Queries */
+        /* ******************************************* */
+
+        @media (max-width: 768px) { /* 當螢幕寬度小於或等於 768px 時應用 */
+            .header-container {
+                flex-direction: column; /* 標題和導覽列堆疊顯示 */
+                align-items: center; /* 內容居中 */
+                padding: 15px 5px; /* 調整內距 */
+            }
+
+            .site-title {
+                font-size: 28px; /* 標題字體縮小 */
+                margin-bottom: 10px; /* 標題下方增加間距 */
+            }
+
+            .nl {
+                gap: 10px; /* 按鈕間距縮小 */
+                justify-content: center; /* 按鈕居中顯示 */
+            }
+
+            .nl a {
+                font-size: 14px; /* 導覽按鈕字體縮小 */
+                padding: 6px 12px; /* 導覽按鈕內距縮小 */
+            }
+
+            .container {
+                grid-template-columns: 1fr; /* 桌面版：1 欄 (所有區塊垂直堆疊) */
+                grid-template-rows: auto; /* 行高自動調整 */
+                padding: 5px; /* 容器內距縮小 */
+            }
+
+            .container div {
+                padding: 10px; /* 區塊內距縮小 */
+            }
+
+            .bc, .sc, .sc2, .school-timetable, .lyrics-section, .footer {
+                grid-column: 1 / 1; /* 所有區塊都佔據單欄 */
+                grid-row: auto; /* 行自動排列 */
+            }
+
+            h3 {
+                font-size: 20px; /* 小標題字體縮小 */
+            }
+
+            .important {
+                font-size: 16px; /* 重要文字字體縮小 */
+            }
+
+            .btn-group2 a {
+                font-size: 14px; /* 按鈕字體縮小 */
+                padding: 6px 14px; /* 按鈕內距縮小 */
+            }
+
+            table {
+                font-size: 14px; /* 表格字體縮小 */
+            }
+
+            td {
+                padding: 6px; /* 表格儲存格內距縮小 */
+            }
+
+            #end, #wa {
+                font-size: 12px; /* 頁腳文字字體縮小 */
+            }
+        }
+
+        /* 再次確保 .btn-group2 及其內部元素沒有邊框和不必要的背景/內距 */
+        /* 這邊寫在 Media Query 外，以確保它對所有尺寸都生效，並能覆蓋 .container div 的通用規則 */
+        .btn-group2 {
+            border: none !important; /* 移除 btn-group2 自身的邊框 */
+            padding: 0 !important; /* 移除 btn-group2 自身的內距 */
+            background-color: transparent !important; /* 確保背景是透明的 */
+        }
+
+        .btn-group2 p {
+            margin: 0 !important; /* 移除 <p> 標籤預設的上下邊距 */
+            padding: 0 !important; /* 移除 <p> 標籤預設的內距 */
+            border: none !important; /* 確保 <p> 標籤沒有邊框 */
+            background-color: transparent !important; /* 確保背景是透明的 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="site-title">Weiyu｜<span style="font-size: 24px;">Official Site</span></div>
+        <div class="nl">
+            <a href="About.html">Profile</a>
+            <a href="sc.html">Schedule</a>
+            <a href="Lyrics.html">Music</a>
+            <a href="mailto:macadam_topspin.0d@icloud.com">Contact</a>
+            <a href="index.html">PC</a>
+        </div>
+    </div>
+    <img src="Weiyu.jpg" class="banner" alt="Weiyu Banner">
+
+    <div class="container">
+        <div class="bc">
+            <img src="Lan.webp" alt="Banner" class="banner">
+            <h3>About Me</h3>
+            <ul>
+                <li>From Taipei</li>
+                <li>Gemini</li>
+                <li>ISTP</li>
+                <li>NICA</li>
+                <li>TKU DILS</li>
+            </ul>
+            </div>
+
+        <div class="sc">
+            <h3>This month's favorite animation top5</h3>
+            <ol>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42917" target="_blank">日々は過ぎれど飯うまし</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42905" target="_blank">スライム倒して300年、知らないうちにレベルMAXになってました</a></li>
+                <br>
+                <li><a href="https://www.netflix.com/browse?jbv=81712068" target="_blank">薬屋のひとりごと</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42887" target="_blank">完璧すぎて可愛げがないと婚約破棄された聖女は隣国に売られる</a></li>
+                <br>
+                <li><a href="https://ani.gamer.com.tw/animeVideo.php?sn=42931" target="_blank">忍者と殺し屋のふたりぐらし</a></li>
+            </ol>
+        </div>
+
+        <div class="sc2">
+            <h3>My favorite light novels and manga</h3>
+            <table>
+                <tr><td><a href="https://roshidere.com" target="_blank">時々ボソッとロシア語でデレる隣のアーリャさん</a></td></tr>
+                <tr><td><a href="https://shonenjumpplus.com/episode/13933686331692600972" target="_blank">久保さんは僕を許さない</a></td></tr>
+                </table>
+        </div>
+
+        <div class="school-timetable">
+            <h3 class="important">School timetable</h3>
+            <div class="btn-group2">
+                <p><a class="important" href="sc.html" target="_blank">
+                このボタンをぽちってね～！そしたら、あのページに行けるよんっ</a></p>
+            </div>
+        </div>
+
+        <div class="lyrics-section">
+            <h3 class="important">Lyrics</h3>
+            <div class="btn-group2">
+                <p><a class="important" href="Lyrics.html" target="_self">天球(そら)のMúsica</a></p>
+                <p><a class="important" href="Lyrics2.html" target="_self">金系雀～カナリヤ～feat.亜季</a></p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p id="end">This page is still under construction.</p>
+            <h5 id="wa">当サイトの内容の無断転載・引用を禁じます。</h5>
+            <p id="end">3.15: Add Page; 3.20 Fixed the link; 3.23:CSS Adjustments; 3.24:Add Page; 4.01:Add Page and Some adjustments; 5.06:Edited with Flex; 5.19:Optimizing flex; 5.25:Update something<br>Contact: macadam_topspin.0d@icloud.com</p>
+        </div>
+    </div>
+</body>
+</html>
