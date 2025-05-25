@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Profile / Weiyu オフィシャルサイト</title>
+	<style>
+		/* 參考自：https://www.w3schools.com & chatgpt.com */
+		body{
+			font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+		}
+		.ime{
+			display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+		}
+		.cud{
+			display: flex;
+            align-items: center;
+            gap: 20px;
+		}
+		.ct{
+			border-collapse: collapse;
+            width: 365px;
+		}
+		.ct th{
+			border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            background-color: #b0c4de;
+		}
+		.ct td{
+			border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+		}
+		.pic img{
+			width: 150px;
+            height: auto;
+            border-radius: 10px;
+		}
+		.btn-group a{
+			display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #778899;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+		}
+		.btn-group a:hover{
+			background-color: #add8e6;
+		}
+		h2 {
+            position: absolute;
+		    top: 17.5%;
+		    left: 520px;
+		    transform: translateY(-50%);
+		    font-size: 24px;
+		    font-weight: bold;
+            color: #696969;
+        }
+        #end {
+		    position: absolute;
+		    bottom: -30px; /*往下移動 50px*/
+		    left: 50%;
+		    transform: translateX(-50%); /* 讓文字置中 */
+		    font-size: 14px;
+		    //white-space: nowrap; /* 防止文字換行 */
+		}
+
+
+	</style>
+
+</head>
+<body>
+	<div class="ime">
+        <h2>Profile</h2>
+        <div class="cud">
+            <table class="ct">
+                <tr>
+                    <th>姓名</th>
+                    <td>陳威佑</td>
+                </tr>
+                <tr>
+                    <th>星座</th>
+                    <td>雙子座</td>
+                </tr>
+                <tr>
+                    <th>出身地</th>
+                    <td>臺北市</td>
+                </tr>
+                <tr>
+                    <th>興趣</th>
+                    <td>アニメ、音樂、影集、日劇、輕小說</td>
+                </tr>
+                <tr>
+                    <th>經歷</th>
+                    <td>班聯會主席<br>班聯會選舉事務組長</td>
+                </tr>
+                <tr>
+                    <th>證照</th>
+                    <td>工業電子丙級<br>電腦軟體應用丙級<br>電腦軟體應用乙級</td>
+                </tr>
+            </table>
+            <!--<div class="pic">
+                <img src="M6.jpg">
+            </div>-->
+        </div>
+        <br>
+        <div class="btn-group">
+            <a href="index.html" target="_self">Back to list</a>
+        </div>
+        <!--<hr id="end">-->
+        <p style="color:#a9a9a9;" id="end">当サイトの内容（文章・画像等）の無断転載、引用、再配布、二次加工、商業利用を固く禁じます。</p>
+    </div>
+</body>
+</html>
