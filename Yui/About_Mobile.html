@@ -11,10 +11,11 @@
             background-color: #f0f8ff;
             margin: 0;
             padding: 20px; /* 基本 padding */
-            padding-top: 30px; /* 固定從頂部增加 30px 的內距 (原手機版值) */
+            padding-top: 30px; /* 固定從頂部增加 30px 的內距 */
             display: flex;
-            justify-content: center;
-            align-items: flex-start; /* 內容從頂部開始排列，而非垂直居中 */
+            flex-direction: column; /* 讓內容垂直堆疊，包含 ime 和 footer */
+            justify-content: flex-start; /* 內容從頂部開始 */
+            align-items: center; /* 讓內容在水平方向上居中 */
             min-height: 100vh; /* 確保內容足夠時可以滾動 */
             box-sizing: border-box; /* 確保 padding 不會導致溢出 */
             overflow-y: auto; /* 確保內容超出行高時可以垂直滾動 */
@@ -24,12 +25,13 @@
             flex-direction: column;
             align-items: center;
             background: white;
-            padding: 15px; /* 固定內距 (原手機版值) */
-            border-radius: 5px; /* 固定圓角 (原手機版值) */
+            padding: 15px; /* 固定內距 */
+            border-radius: 5px; /* 固定圓角 */
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             max-width: 600px; /* 限制一個合理的最大寬度，避免在超大螢幕上過寬 */
             width: 100%; /* 讓它在小螢幕上能填滿寬度 */
             position: relative;
+            margin-bottom: 20px; /* 新增：讓 ime 容器下方與版權聲明有間距 */
         }
         .cud{
             display: flex;
@@ -37,7 +39,6 @@
             align-items: center; /* 內容居中 */
             gap: 15px; /* 固定間距 */
             width: 100%; /* 確保子容器佔滿 ime 的寬度 */
-            /* flex-wrap: wrap; 和 justify-content: center; 在 flex-direction: column 時通常不需要 */
         }
         .ct{
             border-collapse: collapse;
@@ -55,15 +56,15 @@
             background-color: #b0c4de;
         }
         .pic img{
-            width: 100px; /* 固定圖片大小 (原手機版值) */
+            width: 100px; /* 固定圖片大小 */
             height: auto;
             border-radius: 10px;
             max-width: 100%; /* 圖片確保不溢出 */
         }
         .btn-group a{
             display: inline-block;
-            padding: 8px 15px; /* 固定按鈕內距 (原手機版值) */
-            font-size: 14px; /* 固定按鈕字體大小 (原手機版值) */
+            padding: 8px 15px; /* 固定按鈕內距 */
+            font-size: 14px; /* 固定按鈕字體大小 */
             color: white;
             background-color: #778899;
             text-decoration: none;
@@ -75,18 +76,25 @@
         }
         h2 {
             margin-top: 0;
-            margin-bottom: 15px; /* 固定間距 (原手機版值) */
-            font-size: 20px; /* 固定標題字體大小 (原手機版值) */
+            margin-bottom: 15px; /* 固定間距 */
+            font-size: 20px; /* 固定標題字體大小 */
             font-weight: bold;
             color: #696969;
             text-align: center;
         }
+
+        /* 新增或修改 #end 的樣式 */
         #end {
-            margin-top: 15px; /* 固定間距 (原手機版值) */
-            margin-bottom: 0;
-            font-size: 12px; /* 固定頁腳文字字體大小 (原手機版值) */
+            /* 移除之前在 .ime 內部的 margin-top/bottom */
+            margin-top: 0;
+            margin-bottom: 20px; /* 距離頁面底部有 20px 間距 */
+            font-size: 12px;
             text-align: center;
-            color: #a9a9a9;
+            color: #a9a9a9; /* 淺灰色 */
+            width: 100%; /* 讓它佔滿寬度 */
+            max-width: 600px; /* 限制最大寬度，與 .ime 容器對齊 */
+            padding: 0 20px; /* 左右內距，與 body 的 padding 對齊 */
+            box-sizing: border-box; /* 確保 padding 不會導致溢出 */
         }
     </style>
 </head>
@@ -125,7 +133,9 @@
         <div class="btn-group">
             <a href="index.html" target="_self">Back to list</a>
         </div>
-        <p id="end">当サイトの内容（文章・画像等）の無断転載、引用、再配布、二次加工、商業利用を固く禁じます。</p>
     </div>
+
+    <p id="end" style="color: gray;">当サイトの内容（文章・画像等）の無断転載、引用、再配布、二次加工、商業利用を固く禁じます。</p>
+
 </body>
 </html>
