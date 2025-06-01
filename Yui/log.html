@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>更新ログ / Weiyu オフィシャルサイト</title>
+  <style>
+    :root {
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --border-color: #ddd;
+      --highlight-bg: #f0f0f0;
+    }
+
+    body.dark-mode {
+      --bg-color: #1e1e1e;
+      --text-color: #eee;
+      --border-color: #444;
+      --highlight-bg: #333;
+    }
+
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 40px 20px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 40px;
+      border-left: 5px solid var(--text-color);
+      padding-left: 12px;
+      font-weight: normal;
+    }
+
+    .log-entry {
+      display: flex;
+      border-top: 1px solid var(--border-color);
+      padding: 20px 0;
+      gap: 20px;
+    }
+
+    .log-entry:last-child {
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .date {
+      width: 70px;
+      color: var(--text-color);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+
+    .version {
+      width: 60px;
+      color: var(--text-color);
+      font-family: monospace;
+      flex-shrink: 0;
+    }
+
+    .desc {
+      flex: 1;
+    }
+
+    .log-entry:hover {
+      background-color: var(--highlight-bg);
+      transition: background-color 0.3s;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .toggle-button {
+      font-size: 14px;
+      padding: 8px 16px;
+      cursor: pointer;
+      border: 1px solid var(--text-color);
+      background: transparent;
+      color: var(--text-color);
+      transition: all 0.3s ease;
+    }
+
+    .toggle-button:hover {
+      background: var(--highlight-bg);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="button-group">
+	  <button class="toggle-button" onclick="location.href='index.html'">ホーム / Home</button>
+      <button class="toggle-button" onclick="toggleMode()">モード切替 / Toggle Mode</button>
+      <button class="toggle-button" onclick="toggleLanguage()">日本語 / English</button>
+    </div>
+    <h1 id="page-title">更新ログ</h1>
+
+    <div id="log-list">
+      <div class="log-entry">
+        <div class="date">3.15</div>
+        <div class="version">v1.0</div>
+        <div class="desc">ページを追加しました</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">3.20</div>
+        <div class="version">v1.0.1</div>
+        <div class="desc">リンクの修正</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">3.23</div>
+        <div class="version">v1.1</div>
+        <div class="desc">CSS 調整</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">3.24</div>
+        <div class="version">v2.0</div>
+        <div class="desc">新しいページを追加</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">4.01</div>
+        <div class="version">v2.1</div>
+        <div class="desc">ページ追加と微調整</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">5.06</div>
+        <div class="version">v3.0</div>
+        <div class="desc">Flex を使用して再構築</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">5.19</div>
+        <div class="version">v3.1</div>
+        <div class="desc">Flex の最適化</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">5.25</div>
+        <div class="version">v3.2</div>
+        <div class="desc">細かなアップデート</div>
+      </div>
+
+      <div class="log-entry">
+        <div class="date">6.01</div>
+        <div class="version">v3.3</div>
+        <div class="desc">ページ追加と調整</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    let isJapanese = true;
+    function toggleLanguage() {
+      const title = document.getElementById('page-title');
+      const entries = document.querySelectorAll('.log-entry .desc');
+      const translations = [
+        ['ページを追加しました', 'Added page'],
+        ['リンクの修正', 'Fixed the link'],
+        ['CSS 調整', 'CSS adjustments'],
+        ['新しいページを追加', 'Added new page'],
+        ['ページ追加と微調整', 'Added page and minor adjustments'],
+        ['Flex を使用して再構築', 'Rebuilt with Flex'],
+        ['Flex の最適化', 'Optimized Flex'],
+        ['細かなアップデート', 'Minor updates'],
+        ['ページ追加と調整', 'Added pages and adjustments']
+      ];
+
+      isJapanese = !isJapanese;
+      title.textContent = isJapanese ? '更新ログ' : 'Update Log';
+
+      entries.forEach((desc, index) => {
+        desc.textContent = isJapanese ? translations[index][0] : translations[index][1];
+      });
+    }
+  </script>
+</body>
+</html>
