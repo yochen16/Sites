@@ -13,6 +13,10 @@
             background-color: snow;
         }
 
+        a, button, input[type="button"], input[type="submit"], input[type="reset"], select {
+            cursor: pointer;
+        }
+
         a {
             color: lightpink;
             font-style: italic;
@@ -42,11 +46,10 @@
             background-color: white;
         }
 
-        /* 原始保留區塊樣式 */
         .header-container {
-            display: flex; /* 啟用 Flexbox */
-            justify-content: space-between; /* 讓子元素兩端對齊，中間分配空間 */
-            align-items: center; /* 垂直置中對齊 */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #333;
             color: white;
             padding: 20px 10px;
@@ -61,9 +64,8 @@
         .nl {
             display: flex;
             flex-wrap: wrap;
-            gap: 15px; /* 按鈕之間的間距 */
+            gap: 15px;
             font-family: sans-serif;
-            /* 移除 justify-content: center; 因為父容器會處理對齊 */
         }
 
         .nl {
@@ -89,10 +91,12 @@
             background-color: #888;
         }
 
-        .banner {
+        img.banner {
             width: 100%;
             height: auto;
             display: block;
+            max-height: auto; 
+            object-fit: cover; 
         }
 
         .bc {
@@ -185,31 +189,90 @@
             font-size: 14px;
             line-height: 1.4;
         }
-        .bc img.banner {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 10px; /* optional 圓角 */
+        
+        /* ============== SCROLL 指示器樣式 ============== */
+        .scroll-indicator-left {
+            position: fixed;
+            left: 30px; /* 距離左側 30px */
+            top: 50%; /* 垂直置中 */
+            transform: translateY(-50%) rotate(90deg); /* 垂直置中並旋轉 90 度 */
+            transform-origin: left center; /* 確保旋轉後線條從文字右側延伸 */
+            color: white; 
+            font-size: 12px; 
+            font-weight: normal; 
+            letter-spacing: 2px; 
+            text-transform: uppercase; 
+            opacity: 0.7; 
+            z-index: 1000; 
+            display: flex; 
+            align-items: center; 
+            transition: opacity 0.3s ease-out; 
+            cursor: pointer;
         }
 
+        .scroll-indicator-left:hover {
+            opacity: 1;
+        }
+
+        /* SCROLL 文字本身 */
+        .scroll-indicator-left .scroll-text {
+            white-space: nowrap;
+        }
+
+        /* 線條樣式 */
+        .scroll-indicator-left .scroll-line {
+            width: 30px;
+            height: 1px;
+            background-color: white;
+            margin-left: 10px; /* 文字和線條之間的間距 */
+            animation: line-scroll-animation 1.5s infinite ease-in-out;
+        }
+
+        /* 線條動畫 (保持不變) */
+        @keyframes line-scroll-animation {
+            0% {
+                transform: translateX(-20px);
+                opacity: 0; 
+                width: 0; 
+            }
+            30% {
+                transform: translateX(0);
+                opacity: 1; 
+                width: 30px; 
+            }
+            70% {
+                transform: translateX(0);
+                opacity: 1; 
+                width: 30px; 
+            }
+            100% {
+                transform: translateX(20px);
+                opacity: 0; 
+                width: 0; 
+            }
+        }
     </style>
 </head>
 <body>
 
-    <!-- 保留原本顯示方式的 Header + Banner -->
     <div class="header-container">
         <div class="site-title">Weiyu｜<span style="font-size: 24px;">Official Site</span></div>
         <div class="nl">
             <a href="About.html">Profile</a>
             <a href="sc.html">Schedule</a>
             <a href="Lyrics.html">Music</a>
+            <a href="anime.html">Anime</a>
             <a href="mailto:macadam_topspin.0d@icloud.com">Contact</a>
             <a href="phone.html">Mobile</a>
         </div>
     </div>
     <img src="Weiyu.jpg" class="banner" alt="Weiyu Banner">
 
-    <!-- 其餘內容採用新版排版風格 -->
+    <div class="scroll-indicator-left" id="scrollIndicator">
+        <span class="scroll-text">SCROLL</span>
+        <div class="scroll-line"></div>
+    </div>
+
     <div class="container">
         <div class="bc">
             <img src="Lan.webp" alt="Banner" class="banner">
@@ -224,7 +287,7 @@
             <h3 class="important">School timetable</h3>
             <div class="btn-group2" style="border: none; padding: 0; background-color: transparent;">
                 <p><a class="important" href="sc.html" target="_blank">
-            このボタンをぽちってね～！そしたら、あのページに行けるよんっ</a></p>
+                このボタンをぽちってね～！そしたら、あのページに行けるよんっ</a></p>
             </div>
         </div>
 
@@ -244,18 +307,10 @@
         </div>
 
         <div class="sc2">
-            <!--<h3>Tags</h3>
-            <table>
-                <tr><td>Tag1</td><td>style</td></tr>
-                <tr><td>Tag2</td><td>hr</td></tr>
-                <tr><td>Tag3</td><td>br</td></tr>
-            </table>-->
             <h3>My favorite light novels and manga</h3>
             <table>
                 <tr><td><a href="https://roshidere.com" target="_blank">時々ボソッとロシア語でデレる隣のアーリャさん</a></td></tr>
                 <tr><td><a href="https://shonenjumpplus.com/episode/13933686331692600972" target="_blank">久保さんは僕を許さない</a></td></tr>
-                <!--<tr><td><a href="https://fantasiabunko.jp/special/202302shuichi/" target="_blank">週に一度クラスメイトを買う話</a></td></tr>
-                <tr><td><a href="https://storia.takeshobo.co.jp/manga/osakano/" target="_blank">どうしたら幼馴染の彼女になれますか！？</a></td></tr>-->
             </table>
             
 
@@ -269,8 +324,54 @@
         <div class="footer">
             <p id="end">This page is still under construction.</p>
             <h5 id="wa">当サイトの内容の無断転載・引用を禁じます。</h5>
-            <p id="end">3.15: Add Page; 3.20 Fixed the link; 3.23:CSS Adjustments; 3.24:Add Page; 4.01:Add Page and Some adjustments; 5.06:Edited with Flex; 5.19:Optimizing flex; 5.25:Update something<br>Contact: macadam_topspin.0d@icloud.com</p>
+            <p id="end"><a href="log.html" target="_self">Update Log</a><br>Contact: macadam_topspin.0d@icloud.com</p>
         </div>
     </div>
+
+
+    <script>
+        // SCROLL 提示的滾動隱藏功能 (左側版本)
+        const scrollIndicator = document.getElementById('scrollIndicator');
+
+        const headerContainer = document.querySelector('.header-container');
+        const mainBanner = document.querySelector('img.banner');
+
+        let hideThreshold = 0;
+
+        function calculateHideThreshold() {
+            let currentViewportHeight = window.innerHeight;
+            // 當滾動距離超過視口高度的 20% 時隱藏
+            hideThreshold = currentViewportHeight * 0.2; 
+        }
+
+        calculateHideThreshold();
+        window.addEventListener('resize', calculateHideThreshold);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > hideThreshold) {
+                scrollIndicator.style.opacity = '0';
+                scrollIndicator.style.pointerEvents = 'none';
+            } else {
+                scrollIndicator.style.opacity = '0.7';
+                scrollIndicator.style.pointerEvents = 'auto';
+            }
+        });
+
+        scrollIndicator.addEventListener('click', (e) => {
+            e.preventDefault();
+            let scrollToY = 0;
+            if (headerContainer) {
+                scrollToY += headerContainer.offsetHeight;
+            }
+            if (mainBanner) {
+                scrollToY += mainBanner.offsetHeight;
+            }
+
+            window.scrollTo({
+                top: scrollToY,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
