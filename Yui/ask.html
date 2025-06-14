@@ -26,8 +26,8 @@
             box-shadow: 0 1px 3px rgba(0,0,0,0.03);
         }
         .banner-left {
-            font-weight: bold;
-            font-size: 1.15em;
+            font-weight: normal;
+            font-size: 1.05em;
             color: #333;
         }
         .banner-left span {
@@ -45,11 +45,12 @@
         }
 
         h1 {
-            color: #333;
+            color: gray;
+            font-weight: 500;
             /* text-align: center; /* Removed or changed */
             text-align: left; /* Aligned to left */
             margin-bottom: 30px;
-            padding-top: 40px;
+            padding-top: 20px;
             max-width: 600px; /* Match content width */
             margin-left: auto; /* Center with max-width */
             margin-right: auto; /* Center with max-width */
@@ -65,7 +66,7 @@
         .form-section label {
             display: block;
             margin-bottom: 8px;
-            font-weight: bold;
+            font-weight: normal;
         }
         .form-section input[type="text"],
         .form-section input[type="email"],
@@ -106,7 +107,7 @@
         .note {
             font-size: 0.85em;
             color: #666;
-            margin-top: 15px;
+            margin-top: 5px;
             text-align: right;
         }
         button[type="submit"] {
@@ -130,7 +131,7 @@
 <body>
     <div class="banner">
         <div class="banner-left">
-            Weiyu <span>|</span> Official Site
+            Weiyu<span>|</span> 問い合わせフォーム
         </div>
         <div class="banner-right">
             <a href="index.html">ホーム / Home</a>
@@ -141,6 +142,7 @@
 
     <div class="info-text">
         <!--ファンクラブに関するお問い合わせは<a href="#">こちら</a>よりお願いいたします。<br><br>-->
+        当サイトではFormsubmitのフォームサービスを利用しており、送信後は自動的にホームページへリダイレクトされます。<br><br>
         迷惑メール対策等をされている場合には、当方からお送りするメールには料金請求や不審なサイトへの誘導リンク等は一切含まれておりませんので、それらが含まれていないことをご確認の上、ご返信や手続きを行ってください。
     </div>
 
@@ -164,7 +166,7 @@
         
         <input type="hidden" name="_captcha" value="true">
         <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="https://example.com/thanks.html">
+        <input type="hidden" name="_next" value="https://yochen16.github.io/Sites/Yui/index.html">
         <input type="hidden" name="_subject" value="お問い合わせ From Weiyu Official Site">
 
         <button type="submit">送信</button>
