@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お問い合わせ / Weiyu オフィシャルサイト</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Banner Styles */
+        .banner {
+            background-color: #fff;
+            padding: 12px 30px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1em;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+        }
+        .banner-left {
+            font-weight: bold;
+            font-size: 1.15em;
+            color: #333;
+        }
+        .banner-left span {
+            color: #999;
+            margin: 0 6px;
+        }
+        .banner-right a {
+            text-decoration: none;
+            color: #555;
+            font-size: 0.8em;
+            white-space: nowrap;
+        }
+        .banner-right a:hover {
+            color: #007bff;
+        }
+
+        h1 {
+            color: #333;
+            /* text-align: center; /* Removed or changed */
+            text-align: left; /* Aligned to left */
+            margin-bottom: 30px;
+            padding-top: 40px;
+            max-width: 600px; /* Match content width */
+            margin-left: auto; /* Center with max-width */
+            margin-right: auto; /* Center with max-width */
+        }
+        form {
+            max-width: 600px;
+            margin: 0px auto 40px auto;
+            padding: 20px;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"],
+        .form-section input[type="email"],
+        .form-section textarea {
+            width: calc(100% - 22px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+        .form-section textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        .required-mark {
+            color: #e74c3c;
+            margin-left: 5px;
+        }
+        .info-text {
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+            background-color: #eef;
+            border-left: 5px solid #add8e6;
+            padding: 15px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            line-height: 1.5;
+        }
+        .info-text a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .info-text a:hover {
+            text-decoration: underline;
+        }
+        .note {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 15px;
+            text-align: right;
+        }
+        button[type="submit"] {
+            display: block;
+            width: fit-content;
+            margin: 30px auto 0 auto;
+            padding: 12px 30px;
+            background-color: lightskyblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        button[type="submit"]:hover {
+            background-color: deepskyblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner-left">
+            Weiyu <span>|</span> Official Site
+        </div>
+        <div class="banner-right">
+            <a href="index.html">ホーム / Home</a>
+        </div>
+    </div>
+
+    <h1>お問い合わせ</h1>
+
+    <div class="info-text">
+        ファンクラブに関するお問い合わせは<a href="#">こちら</a>よりお願いいたします。<br><br>
+        お問い合わせへの返信はご登録いただいたアドレスにメールをさせていただきます。<br>
+        迷惑メール対策等をされている場合には、「hinatazaka46.com」を許可するドメインとしてご登録ください。
+    </div>
+
+    <form action="https://formsubmit.co/weiyuchen2006@gmail.com" method="POST">
+        <p class="note"><span class="required-mark">(*)</span>は必須項目になります。</p>
+
+        <div class="form-section">
+            <label for="name">お名前<span class="required-mark">(*)</span></label>
+            <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-section">
+            <label for="email">メールアドレス<span class="required-mark">(*)</span></label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-section">
+            <label for="message">お問い合わせ内容<span class="required-mark">(*)</span></label>
+            <textarea id="message" name="message" required></textarea>
+        </div>
+        
+        <input type="hidden" name="_captcha" value="true">
+        <input type="hidden" name="_template" value="table">
+        <input type="hidden" name="_next" value="https://example.com/thanks.html">
+        <input type="hidden" name="_subject" value="お問い合わせ From Weiyu Official Site">
+
+        <button type="submit">送信</button>
+    </form>
+</body>
+</html>
