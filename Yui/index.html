@@ -251,6 +251,52 @@
                 width: 0; 
             }
         }
+        .footer-new {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          flex-wrap: wrap;
+          padding: 30px 50px;
+          background: linear-gradient(to top, #E4E4E4, snow);
+          color: #333;
+          font-size: 14px;
+        }
+
+        .footer-col {
+          min-width: 220px;
+          line-height: 1.6;
+        }
+
+        .footer-col.right {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .footer-col.right span {
+          display: inline;  /* 或 block 但讓 a 是 inline */
+        }
+
+        .footer-col.right a {
+          color: #333;
+          text-decoration: none;
+          font-size: 14px;
+        }
+
+        .footer-col.right a:hover {
+          /*color: royalblue;*/
+          color: lightpink;
+          text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+          .footer-new {
+            flex-direction: column;
+            padding: 20px;
+          }
+        }
+
+
     </style>
 </head>
 <body>
@@ -322,12 +368,26 @@
             </div>
         </div>
 
-        <div class="footer">
+        <!--<div class="footer">
             <p id="end">This page is still under construction.</p>
             <h5 id="wa">当サイトの内容の無断転載・引用を禁じます。</h5>
             <p id="end"><a href="log.html" target="_self">Update Log</a><br>Contact: macadam_topspin.0d@icloud.com</p>
-        </div>
+        </div>-->
+
     </div>
+    <div class="footer-new">
+      <div class="footer-col left">
+        <strong>Weiyu オフィシャルサイト</strong><br>
+        This page is still under construction.<br>
+        当サイトの内容の無断転載・引用を禁じます。<br>
+        © 2025 ゆい
+      </div>
+      <div class="footer-col right">
+        <span><a href="log.html" target="_self">Update Log</a></span>
+        <span><a href="mailto:macadam_topspin.0d@icloud.com">Email</a></span>
+      </div>
+    </div>
+
 
 
     <script>
