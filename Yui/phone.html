@@ -276,6 +276,47 @@
             border: none !important; /* 確保 <p> 標籤沒有邊框 */
             background-color: transparent !important; /* 確保背景是透明的 */
         }
+        .footer-new {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            padding: 30px 50px;
+            background: linear-gradient(to top, lightblue, snow);
+            color: #333;
+            font-size: 14px;
+        }
+
+        .footer-col {
+          min-width: 220px;
+          line-height: 1.6;
+        }
+
+        .footer-col.right {
+          display: flex;
+          flex-direction: column;
+          gap: 6px;
+        }
+
+        .footer-col.right .footer-link {
+          color: #333;
+          text-decoration: none; /* 取消底線 */
+          font-size: 14px;
+          padding: 2px 0; /* 縮小感應範圍，避免邊邊也觸發 */
+        }
+
+        .footer-col.right .footer-link:hover {
+          color: royalblue;
+          text-decoration: underline;
+        }
+
+        @media (max-width: 600px) {
+          .footer-new {
+            flex-direction: column;
+            padding: 20px;
+          }
+        }
+
     </style>
 </head>
 <body>
@@ -346,11 +387,23 @@
             </div>
         </div>
 
-        <div class="footer">
+        <!--<div class="footer">
             <p id="end">This page is still under construction.</p>
             <h5 id="wa">当サイトの内容の無断転載・引用を禁じます。</h5>
-            <p id="end"><a href="log.html" target="_self">Update Log</a><br>Contact: macadam_topspin.0d@icloud.com</p>
+            <p id="end"><a href="log.html" target="_self">Update Log</a><br>Contact: macadam_topspin.0d@icloud.com</p>-->
         </div>
+        <div class="footer-new">
+          <div class="footer-col left">
+            <strong>Weiyu オフィシャルサイト</strong><br>
+            This page is still under construction.<br>
+            当サイトの内容の無断転載・引用を禁じます。
+          </div>
+          <div class="footer-col right">
+            <a href="log.html" target="_self" class="footer-link">Update Log</a>
+            <a href="mailto:macadam_topspin.0d@icloud.com" class="footer-link">Contact</a>
+          </div>
+        </div>
+
     </div>
 </body>
 </html>
