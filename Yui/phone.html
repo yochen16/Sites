@@ -295,8 +295,10 @@
         .footer-col.right {
           display: flex;
           flex-direction: row;
-          justify-content: center;
-          gap: 16px;
+          justify-content: center;  /* 水平置中 */
+          gap: 15px;  /* 連結間距 */
+          flex-wrap: wrap;  /* 如果螢幕太小時能自動換行 */
+          width: 100%;  /* 讓 right 欄自己撐滿，置中更穩定 */
         }
 
         .footer-col.right .footer-link {
