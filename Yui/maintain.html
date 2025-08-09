@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>網頁維護中</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Microsoft JhengHei", sans-serif;
+      background-color: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 3em;
+      color: #333;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .loader {
+      border: 6px solid #f3f3f3;
+      border-top: 6px solid #3498db;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      animation: spin 1s linear infinite;
+      margin-bottom: 20px;
+    }
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .countdown {
+      font-size: 1.1em;
+      color: #444;
+    }
+  </style>
+</head>
+<body>
+  <h1>🔧 頁面維護中</h1>
+  <p>我們正在進行更新與維護，請稍後再試。</p>
+  <div class="loader"></div>
+  <div class="countdown">將在 <span id="seconds">10</span> 秒後跳轉回首頁。</div>
+
+  <script>
+    let timeLeft = 15;
+    const secondsSpan = document.getElementById("seconds");
+
+    const countdown = setInterval(() => {
+      timeLeft--;
+      secondsSpan.textContent = timeLeft;
+      if (timeLeft <= 0) {
+        clearInterval(countdown);
+        window.location.href = "index.html";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
